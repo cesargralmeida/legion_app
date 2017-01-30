@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
 
-  get 'static_pages/about'
+  get 'posts/new'
 
-  get 'static_pages/contact'
+  get '/about', to: 'static_pages#about'
 
-  get 'static_pages/calendar'
+  get '/contact', to: 'static_pages#contact'
 
-  get 'static_pages/members'
+  get '/calendar', to: 'static_pages#calendar'
 
-  get 'static_pages/photos'
+  get '/members', to: 'static_pages#members'
 
-  get 'static_pages/logs'
+  get '/photos', to: 'static_pages#photos'
+
+  get '/logs', to: 'static_pages#logs'
 
   root 'static_pages#home'
+  
+  resources :posts
 end

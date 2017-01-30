@@ -1,5 +1,22 @@
 <% provide(:title, "Home") %>
 <h1>Home</h1>
-<p>
-  Esta é a página inicial, notícias e outras coisinhas ficarão aqui.
-</p>
+
+<ul class="posts">
+	<% @posts.each do |post| %>
+		<div class="panel panel-default" align="center">
+			<div class="panel-heading">
+				<h4 class="panel-title"><br><%= post.title %></br></h4>
+				<% if post == @posts.first %>
+					<span class="label label-success">Novo</span></h3>
+				<% else %>
+					</h3>
+				<% end %>
+			</div>
+			<div class="panel-body">
+				<%= post.content %>
+			</div>
+			<div class="panel-footer"><div align="right"><span class="label label-primary"><%= post.op %> em <%= post.created_at %></span></div></div>
+			</div>
+			<br>
+	<% end %>
+</ul>
