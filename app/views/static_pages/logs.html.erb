@@ -4,3 +4,20 @@
   Nesta página ficarão os logs das noites de raide da guilda.
   Em construção.
 </p>
+<u3 class="logs">
+	<% @logs.each do |log| %>
+	<div class="row">
+		<div class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+				<img src="/assets/raid_icons/<%= log.raid %>.jpg" alt="<%= log.raid %>">
+			<div class="caption">
+			<% if log == @logs.first %><span class="label label-success">Novo</span> <% end %>
+			<h3><%= log.name %></h3>
+        <p><%= log.data %></p>
+        <p><a target="_blank" href="<%= log.link %>" class="btn btn-primary" role="button">WoW Logs</a></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</u3>

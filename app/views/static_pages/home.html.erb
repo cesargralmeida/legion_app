@@ -1,11 +1,11 @@
 <% provide(:title, "Home") %>
 <h1>Home</h1>
 
-<ul class="posts">
+<u3 class="posts">
 	<% @posts.each do |post| %>
 		<div class="panel panel-default" align="center">
 			<div class="panel-heading">
-				<h4 class="panel-title"><br><%= post.title %></br></h4>
+				<h2 class="panel-title"><br><%= post.title %></br></h2>
 				<% if post == @posts.first %>
 					<span class="label label-success">Novo</span></h3>
 				<% else %>
@@ -19,4 +19,4 @@
 			</div>
 			<br>
 	<% end %>
-</ul>
+</u3>

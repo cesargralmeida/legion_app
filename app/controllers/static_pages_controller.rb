@@ -20,5 +20,6 @@ class StaticPagesController < ApplicationController
   end
 
   def logs
+	@logs = Log.all.order(:data).reverse
   end
 end
