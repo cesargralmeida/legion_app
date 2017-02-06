@@ -3,19 +3,18 @@
 
 <u3 class="posts">
 	<% @posts.each do |post| %>
-		<div class="panel panel-default" align="center">
-			<div class="panel-heading">
-				<h2 class="panel-title"><br><%= post.title %></br></h2>
+		<div class="panel panel-default panel-modest-header" align="center">
+			<div class="panel-heading panel-modest-body">
 				<% if post == @posts.first %>
-					<span class="label label-success">Novo</span></h3>
+					<h2 class="panel-title"><%= post.title + "   "  %><span class="label label-success">Novo</span></h2>
 				<% else %>
-					</h3>
+					<h2 class="panel-title"><%= post.title  %>
 				<% end %>
 			</div>
 			<div class="panel-body">
 				<%= post.content %>
 			</div>
-			<div class="panel-footer"><div align="right"><span class="label label-primary"><%= post.op %> em <%= post.created_at %></span></div></div>
+			<div class="panel-footer"><div align="right"><span class="label label-success"><%= post.op %> em <%= post.created_at %></span></div></div>
 			</div>
 			<br>
 	<% end %>
